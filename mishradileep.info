@@ -1,0 +1,42 @@
+name        = mishraDileep
+description = A theme based on Radix for mishraDileep blog.
+screenshot  = screenshot.png
+core        = 7.x
+
+; Base - Radix
+; base theme  = radix
+; Settings
+; Set this to FALSE for development only.
+settings[preprocess_css] = FALSE
+
+
+; Regions
+regions[content] = Content
+regions[right] = Right Bar
+
+; Panels
+plugins[panels][layouts] = panels/layouts
+plugins[panels][styles] = panels/styles
+
+; CSS - General
+stylesheets[all][]     = css/bootstrap.min.css
+stylesheets[all][]     = css/bootstrap-theme.min.css
+stylesheets[all][]     = css/font-awesome.min.css
+stylesheets[all][]     = css/themify-icons.css
+stylesheets[all][]     = css/mishradileep.style.css
+stylesheets[all][]     = css/responsive.css
+
+; Javascript - Libs
+scripts[] = js/jquery-2.2.4.js
+scripts[] = js/bootstrap.min.js
+scripts[] = js/apear.js
+scripts[] = js/jquery-imagefill.js
+scripts[] = js/jquery-nav.js
+scripts[] = js/jquery.stellar.js
+scripts[] = js/nicescroll.js
+
+; Javascript - Vendors
+scripts[] = vendors/imagesloaded/imagesloaded.pkgd.min.js
+
+; Javascript - Custom
+scripts[] = js/custom.js
