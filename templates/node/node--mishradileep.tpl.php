@@ -94,9 +94,11 @@ $image_url = file_create_url($uri);
               <div class="text">
                   <h5 class="blog-date"><?php print date("F j, Y", $node->created); ?></h5>
                   <a href="#"><h4 class="title"><?php print $node->title; ?></h4></a>
-                  <?php print $node->body[$node->language][0]['value']; ?>
+                  <div class="article-body">
+                    <?php print $node->body[$node->language][0]['value']; ?>
+                  </div>
 
-                  <?php if(count($node->field_tags[$node->language])): ?>
+                  <?php if(isset($node->field_tags[$node->language])): ?>
                   <div class="tags">
                     <div class="tag-icon">
                       <i class="fa fa-tags" aria-hidden="true"></i>
