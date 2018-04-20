@@ -3094,6 +3094,34 @@ article h1 {
   margin-bottom: 20px;
 }
 
+article h3 {
+  color: #191b1d;
+  text-transform: capitalize;
+  transition: all 0.4s linear;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 20px 0 5px;
+}
+
+article .article-body p {
+  margin-bottom: 15px;
+}
+
+article .article-body ul {
+  margin: 0 20px 30px;
+
+}
+
+article .article-body ul li {
+  list-style: disc;
+}
+
+
+article .article-body b {
+  color: #191b1d;
+  font-weight: 500;
+}
+
 article img {
   max-width: 100%;
 }
@@ -3140,7 +3168,6 @@ article .tags .tags-item a:hover {
 article .comments h3{
   color: #191b1d;
   padding-bottom: 16px;
-  text-transform: uppercase;
   transition: all 0.4s linear;
   font-size: 20px;
 }
