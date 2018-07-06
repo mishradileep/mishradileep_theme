@@ -86,107 +86,71 @@
  */
 ?>
 
-<!-- Preloader-->
-<div class="loader-container">
-<div class="loader">
-<div id="mask">
-            <svg class="preloader-icon" width="34" height="38" viewbox="0 0 34 38">
-              <path class="preloader-path" stroke-dashoffset="0" d="M29.437 8.114L19.35 2.132c-1.473-.86-3.207-.86-4.68 0L4.153 8.114C2.68 8.974 1.5 10.56 1.5 12.28v11.964c0 1.718 1.22 3.306 2.69 4.165l10.404 5.98c1.47.86 3.362.86 4.834 0l9.97-5.98c1.472-.86 2.102-2.45 2.102-4.168V12.28c0-1.72-.59-3.306-2.063-4.166z"></path>
-            </svg>
+<div class="container-fluid header">
+  <div class="container">
+    <h1>
+      <a href="/">
+        <span class="logo mishra">mishra</span>
+        <span class="logo dileep">Dileep</span>
+      </a>
+      <span class="tag"><?php print $site_slogan; ?></span>
+    </h1>
+  </div>
+</div>
+<div class="container site-content">
+  <div class="row">
+    <div class="col-md-8 dileep">
+      <?php print $messages; ?>
+      <?php print render($page['content']); ?>
+    </div>
+    <div class="col-md-4">
+      <div class="left">
+        <!--
+        <div class="search-box">
+          <form class="search">
+            <input type="text" placeholder="search mishraDileep" class="keyword">
+            <button type="submit" class="btn btn-success btn-search">
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </div>
+        -->
+        <div class="about-author">
+
+          <h2>About Author</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <img src="<?php print path_to_theme(); ?>/assets/images/dileep-mishra.png">
+            </div>
+            <div class="col-md-8">
+              <h2 class="dileep-mishra">Dileep Mishra</h2>
+              <h3>Drupal Architect & Engineering Manager</h3>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p>I am a web developer. I spend most of my time practicing Drupal, CSS, HTML, and JavaScript. I build websites - mostly on Drupal, and web applications using open source technologies.</p>
+            </div>
+          </div>
+
+
+        </div>
       </div>
-</div>
-</div>
-<!-- End Preloader-->
-<header>
-    <nav class="navbar navbar-default navbar-fixed-top" data-spy="affix" data-offset-top="80">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('mishraDileep'); ?>" rel="home" id="logo">
-                  mishra<span class="color">Dileep</span></a>
-                  <span class="navbar-brand"><?php print $site_slogan; ?></span>
-            </div>
-        </div>
-    </nav>
-</header>
-
-<section id="about" class="about">
-    <div class="container">
-        <div class="row display-f bg-color">
-          <div class="col-md-3 col-left blog-intro">
-            <div class="header-photo">
-                <img class="img-circle" src="/<?php print path_to_theme(); ?>/image/1.png" alt="Photo">
-            </div>
-            <div class="col-md-12 intro">
-              <h3 class="hello-t">Hello, I am</h3>
-              <h1 class="name-t">Dileep <br/><span>Mishra</span></h1>
-              <h2 class="expart-n">Drupal Architect &amp; Senior Dev Lead</h2>
-              <div class="">I am a web developer. I spend most of my time practicing Drupal, CSS, HTML, and JavaScript. I build websites - mostly on <b>Drupal</b>, and web applications using open source technologies.</div>
-            </div>
-            <div class="wel-social">
-                <a href="https://www.drupal.org/u/mishradileep" target="_blank"><i class="fa fa-drupal" aria-hidden="true"></i></a>
-                <a href="https://github.com/mishradileep" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/mishradileep/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://twitter.com/mishradileepjpr" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            </div>
-        </div>
-
-
-        <div class="col-md-9 col-right sec-pad">
-
-
-
-              <div class="row align-items-end">
-                <?php print $messages; ?>
-                <?php print render($page['content']); ?>
-              </div>
-              <!--
-              <div class="col-md-6">
-                <div class="blog-item">
-                    <a class="blog-thumb img-fill-container" href="#"><img src="image/blog/welcome.jpg" alt="Blog"></a>
-                    <div class="text">
-                        <h5 class="blog-date">13 December 2016</h5>
-                        <a href="#"><h4 class="title">Lorem ipsum dolor sit amet. Too much lorem ipsum this time</h4></a>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur occaecat cupidatat.</p>
-                    </div>
-                </div>
-              </div>
-            -->
-
-
-
-
-
-
-
-        </div>
-
-
-        </div>
     </div>
-</section>
-
-<!--=============Start footer-area ===========-->
-<footer class="footer-area">
-    <div class="container">
-        <div class="row display-f bg-color">
-            <div class="col-md-3 col-sm-4 col-left">
-                <div class="sec-title">
-                    <h6>&copy; 2018 / www.mishraDileep.com</h6>
-                </div>
-            </div>
-            <div class="col-md-9 col-sm-8 col-right f-right">
-                <div class="footer-links">
-                    <a href="#">Terms of Us</a>
-                    <a href="#">Privacy Policy</a>
-                </div>
-                <div class="footer-social">
-                  <a href="https://www.drupal.org/u/mishradileep" target="_blank"><i class="fa fa-drupal" aria-hidden="true"></i></a>
-                  <a href="https://github.com/mishradileep" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                  <a href="https://www.linkedin.com/in/mishradileep/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                  <a href="https://twitter.com/mishradileepjpr" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                </div>
-            </div>
+  </div>
+</div>
+<div class="container-fluid footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">&copy; 2018 / www.mishraDileep.me</div>
+      <div class="col-md-6">
+        <div class="sns">
+          <a href="https://www.drupal.org/u/mishradileep" target="_blank"><i class="fa fa-drupal" aria-hidden="true"></i></a>
+          <a href="https://github.com/mishradileep" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/mishradileep/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/mishradileepjpr" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
         </div>
+      </div>
     </div>
-</footer>
-<!--=============End footer-area ===========-->
+  </div>
+</div>

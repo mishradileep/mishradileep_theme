@@ -59,20 +59,19 @@
 //  print "<pre>";print_r($node);print "</pre>";
 
 ?>
-<div class="col-md-12 item">
-  <h4><i class="fa fa-user" aria-hidden="true"></i> <?php print $author; ?></h4>
-  <span class="comment-index">
-  <?php
-    print l('#' . $comment->thread, 'node/' . $node->nid, array('fragment' => 'comment-' . $comment->cid));
-  ?>
-  </span>
-  <div class="clearfix"></div>
+<div class="col-md-12 comment">
+  <div class="row comment-author">
+  <div class="col-md-10"><i class="fa fa-user" aria-hidden="true"></i> <?php print $author; ?></div>
+  <div class="col-md-2 comment-index">
+    <?php
+      print l('#' . $comment->thread, 'node/' . $node->nid, array('fragment' => 'comment-' . $comment->cid));
+    ?>
+</div>
+</div>
+<span class="date">
+  <?php print date("F j, Y \A\T H:i T", $comment->created); ?>
+</span>
   <div class="comment-body">
-    <div class="comment-meta">
-      <span class="date">
-        <?php print date("F j, Y \A\T H:i T", $comment->created); ?>
-      </span>
-    </div>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['links']);
@@ -81,3 +80,4 @@
     <?php print render($content['links']); ?>
   </div>
 </div>
+<hr>

@@ -79,59 +79,24 @@
  *
  * @ingroup themeable
  */
-// print "<pre>";print_r($node);print "</pre>";
+ // print "<pre>";print_r($node->field_tags[$node->language]);print "</pre>";
 $uri = $node->field_image[$node->language][0]['uri'];
 $image_url = file_create_url($uri);
 //print $image_url;
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-  <div class="row">
-    <div class="col-md-12 post">
-      <article>
-        <div class="col-md-12">
-          <div class="blog-item">
-              <a class="blog-thumb img-fill-container" href="#"><img src="<?php print $image_url; ?>" alt="<?php print $node->title; ?>"></a>
-              <div class="text">
-                  <h5 class="blog-date"><?php print date("F j, Y", $node->created); ?></h5>
-                  <a href="#"><h4 class="title"><?php print $node->title; ?></h4></a>
-                  <div class="article-body">
-                    <?php print $node->body[$node->language][0]['value']; ?>
-                  </div>
-
-                  <?php if(isset($node->field_tags[$node->language])): ?>
-                  <div class="tags">
-                    <div class="tag-icon">
-                      <i class="fa fa-tags" aria-hidden="true"></i>
-                    </div>
-                    <div class="tags-item">
-                      <?php foreach ($node->field_tags[$node->language] as $term) : ?>
-                        <a href="<?php print url('taxonomy/term/' . $term['tid']); ?>"> <?php print $term['taxonomy_term']->name; ?></a>
-                      <?php endforeach; ?>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                <?php endif; ?>
-                  <hr>
-                  <?php print render($content['comments']); ?>
-              </div>
-
-          </div>
-        </div>
-
-
-
-
-        <div class="article-content">
-
-
-        </div>
-      </article>
-
-
+  <div class="article">
+    <img src="<?php print $image_url; ?>" alt="<?php print $node->title; ?>">
+    <h2><a href="#"><?php print $node->title; ?></a></h2>
+    <div class="date"><?php print date("F j, Y", $node->created); ?></div>
+    <div class="body">
+      <?php print $node->body[$node->language][0]['value']; ?>
     </div>
+    <div class="article-footer">
+      <?php foreach ($node->field_tags[$node->language] as $term) : ?>
+        <a href="<?php print url('taxonomy/term/' . $term['tid']); ?>"> <?php print $term['taxonomy_term']->name; ?></a>,
+      <?php endforeach; ?>
+    </div>
+    <?php print render($content['comments']); ?>
   </div>
 </div>
-<!--
-<script type="text/javascript" src="https://form.jotform.me/jsform/73542942868469"></script>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc8K9RGkXRWJ5jeU1MwxVGC-J9aawuudsjcZ2jMoKGhA6prLw/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
--->

@@ -63,6 +63,16 @@ function mishradileep_form_alter(&$form, &$form_state, $form_id) {
 
   if('comment_node_mishradileep_form' == $form_id) {
     unset($form['author']['homepage']);
+    array_unshift($form['#validate'],'mishradileep_blog_comment_form_validate');
   }
   //print "<pre>"; print_r($form['author']['homepage']); print "</pre>"; print "<br>***";
+}
+
+function mishradileep_blog_comment_form_validate($form, &$form_state) {
+  if ('' == $form_state['values']['name']) {
+    die('No Name');
+    form_set_error('name', 'Title cannot be "test"');
+  }
+  drupal_goto($_GET['q']);
+  //print "<pre>"; print_r($form_state['values']['name']); print "<pre>"; die;
 }

@@ -19,22 +19,16 @@
  * @ingroup views_templates
  */
 ?>
-<div class="row">
-  <?php
-    $i = 0;
-    foreach ($rows as $row_count => $row): ?>
-    <div class="col-md-6">
-      <div class="blog-item">
-          <a class="blog-thumb img-fill-container" href="<?php print drupal_get_path_alias('node/' . $row['nid']); ?>"><?php print $row['field_image']; ?></a>
-          <div class="text">
-              <h5 class="blog-date"><?php print $row['created']; ?></h5>
-              <a href="<?php print drupal_get_path_alias('node/' . $row['nid']); ?>"><h4 class="title"><?php print $row['title']; ?></h4></a>
-              <?php print $row['body']; ?>
-          </div>
-      </div>
-    </div>
-    <?php if (1 == $i % 2): ?>
-    </div><div class="row">
-    <?php endif; $i++; ?>
-  <?php endforeach; ?>
+<?php foreach ($rows as $row_count => $row): ?>
+<div class="article mishra">
+  <?php print $row['field_image']; ?>
+  <h2><a href="<?php print drupal_get_path_alias('node/' . $row['nid']); ?>"><?php print $row['title']; ?></a></h2>
+  <div class="date"><?php print $row['created']; ?></div>
+  <div class="body">
+    <?php print $row['body']; ?>
+  </div>
+  <div class="article-footer">
+    <?php print $row['field_tags']; ?>
+  </div>
 </div>
+<?php endforeach; ?>

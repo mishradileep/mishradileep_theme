@@ -1,0 +1,19 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+// Reassign color vars to semantic color scheme
+$brand-primary:             #142126 !default;
+$brand-success:             #e4b238 !default;
+$gray:                      #f2f2f2 !default;
+$gray-dark:                 #b0b8bd !default;
+$gray-light:                #f8f9f9 !default;
+$black-light:               #383f49 !default;
+$black-lighter:             #656565 !default;
+// $brand-info:                $teal !default;
+// $brand-warning:             $orange !default;
+// $brand-danger:              $red !default;
+// $brand-inverse:             $gray-dark !default;
+
+$fa-font-path:        "../assets/fonts" !default;
